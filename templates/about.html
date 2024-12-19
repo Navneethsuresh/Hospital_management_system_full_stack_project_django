@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About MediCare Management System
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="container py-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h1 class="display-4 mb-4">About <span class="text-primary">MediCare</span></h1>
+            <p class="lead text-muted mb-4">
+                At MediCare, we're revolutionizing healthcare management through innovative technology 
+                and compassionate service. Our mission is to streamline hospital operations while 
+                enhancing patient care and medical professional efficiency.
+            </p>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-primary me-3 fa-2x"></i>
+                        <span>Comprehensive Patient Management</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-primary me-3 fa-2x"></i>
+                        <span>Advanced Record Keeping</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-primary me-3 fa-2x"></i>
+                        <span>Efficient Staff Coordination</span>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-check-circle text-primary me-3 fa-2x"></i>
+                        <span>Secure Data Management</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="position-relative">
+                <img src="{% static 'images/car1.jpg' %}" 
+                     alt="MediCare Hospital Management" 
+                     class="img-fluid rounded-4 shadow-lg">
+                <div class="position-absolute top-50 start-50 translate-middle">
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#visionModal">
+                        Our Vision
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Our Core Values</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                            <h4>Compassion</h4>
+                            <p class="text-muted">
+                                Delivering care with empathy, understanding, and genuine human connection.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                            <h4>Integrity</h4>
+                            <p class="text-muted">
+                                Maintaining the highest standards of ethical practice and patient confidentiality.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-rocket fa-3x text-primary mb-3"></i>
+                            <h4>Innovation</h4>
+                            <p class="text-muted">
+                                Continuously improving our technology to provide cutting-edge healthcare solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vision Modal -->
+<div class="modal fade" id="visionModal" tabindex="-1" aria-labelledby="visionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="visionModalLabel">Our Vision</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>To transform healthcare management by creating an integrated, user-friendly system that 
+                   empowers medical professionals, improves patient outcomes, and makes quality healthcare 
+                   more accessible and efficient.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

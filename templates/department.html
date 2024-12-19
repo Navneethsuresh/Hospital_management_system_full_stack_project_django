@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Our Departments
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center display-4 mb-5">
+        <span class="border-bottom border-primary pb-2">Our Medical Departments</span>
+    </h1>
+
+    <div class="row g-4">
+        {% for d in dept %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card department-card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                    <div class="department-icon mb-3">
+                        {% if d.dep_name == 'Cardiology' %}
+                            <i class="fas fa-heartbeat text-primary fa-3x"></i>
+                        {% elif d.dep_name == 'Neurology' %}
+                            <i class="fas fa-brain text-primary fa-3x"></i>
+                        {% elif d.dep_name == 'Pediatrics' %}
+                            <i class="fas fa-child text-primary fa-3x"></i>
+                        {% elif d.dep_name == 'Oncology' %}
+                            <i class="fas fa-ribbon text-primary fa-3x"></i>
+                        {% elif d.dep_name == 'Emergency' %}
+                            <i class="fas fa-ambulance text-primary fa-3x"></i>
+                        {% else %}
+                            <i class="fas fa-hospital-alt text-primary fa-3x"></i>
+                        {% endif %}
+                    </div>
+                    <h3 class="card-title mb-3">{{ d.dep_name }}</h3>
+                    <p class="card-text text-muted">{{ d.dep_decription }}</p>
+                    <a href="#" class="btn btn-outline-primary mt-3">Learn More</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info text-center" role="alert">
+                No departments have been added yet.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="lead text-muted">
+            Our comprehensive departments are staffed by expert medical professionals 
+            dedicated to providing the highest quality of care.
+        </p>
+    </div>
+</div>
+
+<style>
+.department-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.department-icon {
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+</style>
+{% endblock %}

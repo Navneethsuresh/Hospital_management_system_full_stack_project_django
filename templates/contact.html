@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact MediCare
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="display-4 mb-4">Contact <span class="text-primary">MediCare</span></h1>
+            <p class="lead text-muted mb-4">
+                We're here to support your healthcare needs. Reach out to us for any inquiries, 
+                appointments, or assistance.
+            </p>
+
+            <div class="contact-info">
+                <div class="mb-4">
+                    <h4 class="text-primary">
+                        <i class="fas fa-phone-alt me-3"></i>General Helpline
+                    </h4>
+                    <p class="ms-4">(555) 123-4567</p>
+                </div>
+                <div class="mb-4">
+                    <h4 class="text-primary">
+                        <i class="fas fa-envelope me-3"></i>Email
+                    </h4>
+                    <p class="ms-4">contact@medicare-hospital.com</p>
+                </div>
+                <div class="mb-4">
+                    <h4 class="text-primary">
+                        <i class="fas fa-map-marker-alt me-3"></i>Headquarters
+                    </h4>
+                    <p class="ms-4">
+                        1234 Healthcare Boulevard<br>
+                        Wellness City, HC 54321<br>
+                        United States
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card border-0 shadow-lg">
+                <div class="card-body p-5">
+                    <h3 class="text-center mb-4">Send us a Message</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="your.email@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Our Locations</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">
+                                <i class="fas fa-hospital me-2"></i>Wellness Central
+                            </h4>
+                            <p class="card-text">
+                                1234 Healthcare Boulevard<br>
+                                Wellness City, HC 54321<br>
+                                Phone: (555) 123-4567
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">
+                                <i class="fas fa-hospital me-2"></i>Metro Medical Center
+                            </h4>
+                            <p class="card-text">
+                                5678 Urban Street<br>
+                                Metropolis, MT 98765<br>
+                                Phone: (555) 987-6543
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title text-primary">
+                                <i class="fas fa-hospital me-2"></i>Coastal Care Complex
+                            </h4>
+                            <p class="card-text">
+                                9012 Seaside Avenue<br>
+                                Ocean View, CV 24680<br>
+                                Phone: (555) 246-8101
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.contact-info h4 {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 15px;
+    color: #007bff;
+}
+</style>
+{% endblock %}

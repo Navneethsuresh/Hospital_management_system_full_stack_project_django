@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+MediCare Management System
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="container-fluid p-0">
+    <div id="hospitalCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hospitalCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hospitalCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#hospitalCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="{% static 'images/car1.jpg' %}" class="d-block w-100" alt="Modern Hospital Facilities">
+                <div class="carousel-caption d-none d-md-block text-black">
+                    <h1 class="display-4 fw-bold">Advanced Healthcare Solutions</h1>
+                    <p class="lead">Cutting-edge medical technology and compassionate care</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static 'images/car2.jpg' %}" class="d-block w-100" alt="Medical Staff">
+                <div class="carousel-caption d-none d-md-block text-black">
+                    <h1 class="display-4 fw-bold">Expert Medical Professionals</h1>
+                    <p class="lead">Dedicated team providing personalized patient care</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="{% static 'images/car3.jpg' %}" class="d-block w-100" alt="Hospital Interior">
+                <div class="carousel-caption d-none d-md-block text-white">
+                    <h1 class="display-4 fw-bold">Comprehensive Healthcare Services</h1>
+                    <p class="lead">From diagnosis to treatment, we're here for you</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hospitalCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hospitalCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-4 text-center mb-4">
+                <div class="p-4 bg-light rounded">
+                    <i class="fas fa-notes-medical fa-3x text-primary mb-3"></i>
+                    <h3>Patient Management</h3>
+                    <p>Streamline patient records, appointments, and care tracking.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="p-4 bg-light rounded">
+                    <i class="fas fa-user-md fa-3x text-primary mb-3"></i>
+                    <h3>Staff Coordination</h3>
+                    <p>Efficient scheduling and management of medical professionals.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <div class="p-4 bg-light rounded">
+                    <i class="fas fa-file-medical-alt fa-3x text-primary mb-3"></i>
+                    <h3>Digital Records</h3>
+                    <p>Secure and accessible electronic health record management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

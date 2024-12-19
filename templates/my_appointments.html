@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Appointments
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="display-4 mb-4">
+                <i class="fas fa-calendar-check text-primary me-3"></i>
+                My Appointments
+            </h1>
+
+            {% if appointments %}
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Appointment Date</th>
+                                <th>Doctor</th>
+                                <th>Department</th>
+                                <th>Booked On</th>
+                                <th>Contact Details</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for appointment in appointments %}
+                                <tr {% if appointment.booking_date < today %}class="table-secondary text-muted"{% endif %}>
+                                    <td>
+                                        {% if appointment.booking_date == today %}
+                                            <span class="badge bg-success me-2">Today</span>
+                                        {% endif %}
+                                        {{ appointment.booking_date }}
+                                    </td>
+                                    <td>{{ appointment.doc_name}}</td>
+                                    <td>{{ appointment.doc_name.dep_name }}</td>
+                                    <td>{{ appointment.booked_on }}</td>
+                                    <td>
+                                        <strong>Name:</strong> {{ appointment.p_name }}<br>
+                                        <strong>Email:</strong> {{ appointment.p_email }}<br>
+                                        <strong>Phone:</strong> {{ appointment.p_phone }}
+                                    </td>
+                                    <td>
+                                        {% if appointment.booking_date >= today %}
+                                            <button class="btn btn-sm btn-outline-danger cancel-appointment" 
+                                                    data-id="{{ appointment.id }}">
+                                                Cancel
+                                            </button>
+                                        {% else %}
+                                            <span class="text-muted">Completed</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info text-center" role="alert">
+                    <i class="fas fa-info-circle me-2"></i>
+                    You have no upcoming appointments. 
+                    <a href="{% url 'booking' %}" class="alert-link">Book an appointment now</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+.table-responsive {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.table th {
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.cancel-appointment {
+    transition: all 0.3s ease;
+}
+
+.cancel-appointment:hover {
+    transform: scale(1.05);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Appointment cancellation (placeholder - you'll need to implement the actual cancellation logic)
+    const cancelButtons = document.querySelectorAll('.cancel-appointment');
+    
+    cancelButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const appointmentId = this.dataset.id;
+            
+            // Confirm cancellation
+            if(confirm('Are you sure you want to cancel this appointment?')) {
+                // Here you would typically make an AJAX call to cancel the appointment
+                // For now, we'll just show an alert
+                alert(`Appointment ${appointmentId} would be cancelled`);
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
